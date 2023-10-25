@@ -1,0 +1,54 @@
+#events > img {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media (min-width: 640px) {
+  #events > img {
+    max-height: 360px;
+    object-fit: cover;
+  }
+}
+@media (min-width: 800px) {
+  #events > img {
+    content: url(../img/tristan_1280.jpg);
+    max-height: 400px;
+    object-fit: cover;
+  }
+}
+
+#events > article {
+  padding-bottom: 1rem;
+}
+#events > article:last-of-type {
+  padding-bottom: 0;
+}
+#events > article > p {
+  margin: 0;
+}
+.date:before {
+  content: url(../img/microphone.png) " ";
+}
+.event {
+  color: var(--colorBgMain);
+}
+.feature {
+  color: var(--colorCTA2);
+}
+.location,
+.venue {
+  display: inline-block;
+}
+.venue:before {
+  content: "(";
+}
+.venue:after {
+  content: ")";
+}
+
+@media (min-width: 1024px) {
+  #events > article,
+  #events > article:last-of-type {
+    padding: 0.5rem;
+  }
+}

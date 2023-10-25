@@ -1,0 +1,42 @@
+#all_books > article > img {
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+.title,
+.subtitle {
+  font-weight: bold;
+}
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+.subtitle,
+.year {
+  display: inline-block;
+}
+.year:before {
+  content: "(";
+}
+.year:after {
+  content: ")";
+}
+@media (min-width: 480px) {
+  #all_books > article > img {
+    float: right;
+    margin-left: 1rem;
+  }
+  #all_books > article {
+    clear: both;
+    overflow: auto;
+  }
+  #all_books > article:last-of-type {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1024px) {
+  #all_books > article,
+  #all_books > article:last-of-type {
+    padding: 1rem 1rem 0 1rem;
+    margin-bottom: 1rem;
+  }
+}

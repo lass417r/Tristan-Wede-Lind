@@ -1,0 +1,238 @@
+@import "home.css";
+@import "tour.css";
+@import "books.css";
+@import "contact.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
+:root {
+  --colorMain: #0f0f11;
+  --colorSecondary: #a8dadc;
+  --colorLink: #a8dadc;
+  --colorBgMain: #457b9d;
+  --colorBgSecondary: #506283;
+  --colorCTA: #004bd7;
+  --colorCTA2: #3d96cd;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Arial, sans-serif;
+}
+p {
+  font-weight: 300;
+}
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+@media (min-width: 1024px) {
+  body {
+    justify-content: flex-start;
+    margin-left: calc((100vw - 745px) / 2 - 15%);
+    margin-right: calc((100vw - 745px) / 2 - 15%);
+  }
+}
+.header h1 + h2,
+nav a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+.header,
+footer {
+  width: 100%;
+  color: var(--colorSecondary);
+  background-color: var(--colorBgMain);
+}
+nav a,
+footer a {
+  text-decoration: none;
+  color: var(--colorLink);
+}
+nav {
+  background-color: var(--colorBgSecondary);
+}
+nav a:hover,
+footer a:hover {
+  color: var(--colorSecondary);
+}
+nav a:hover::after,
+footer a:hover::after {
+  color: var(--colorLink);
+}
+main {
+  padding: 1rem;
+  background-color: var(--colorLink);
+}
+main > article:target {
+  display: block;
+}
+
+main > article p {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+.some {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.header > * {
+  margin: 0.5rem;
+}
+#avatar {
+  display: none;
+}
+.avatar {
+  border-radius: 50%;
+}
+.header h2 {
+  font-size: 1rem;
+}
+.header select {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  border-radius: 0.5rem;
+}
+@media (min-width: 640px) {
+  .header {
+    text-align: center;
+  }
+  #avatar {
+    display: inline-block;
+  }
+  .header img {
+    max-width: 114px;
+    max-height: 114px;
+    width: 10vw;
+  }
+  .header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+  }
+  .header h2 {
+    font-size: clamp(1rem, 2vw, 1.6rem);
+  }
+}
+nav li {
+  list-style: none;
+  text-align: center;
+  padding: 0.5rem;
+  border-bottom: solid thin var(--colorSecondary);
+}
+nav li:last-of-type {
+  border-bottom: none;
+}
+@media (min-width: 600px) {
+  nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+  nav li {
+    border-bottom: none;
+  }
+}
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+footer > * {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+.top {
+  width: 100%;
+  padding-right: 1rem;
+  margin-top: -0.5rem;
+  text-align: right;
+}
+@media (min-width: 600px) {
+  footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      "pub pub legal credits credits"
+      "some some legal credits credits"
+      "copyright copyright copyright copyright copyright";
+    column-gap: 0;
+  }
+  footer > * {
+    width: 100%;
+  }
+  #keapublishing {
+    grid-area: pub;
+  }
+  #some {
+    grid-area: some;
+    text-align: left;
+  }
+  #legal {
+    grid-area: legal;
+    text-align: center;
+  }
+  #credits {
+    grid-area: credits;
+    text-align: right;
+  }
+  footer > p {
+    grid-area: copyright;
+  }
+  #keapublishing > a > * {
+    display: block;
+    text-align: left;
+  }
+}
+#keapublishing * {
+  vertical-align: middle;
+}
+#legal > * {
+  display: block;
+}
+.article-header {
+  position: relative;
+  left: -1rem;
+  width: calc(100% + (1rem * 2));
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: var(--colorSecondary);
+  background-color: var(--colorBgSecondary);
+}
+.article-header > h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+.card-container > article {
+  border-bottom: solid thin var(--colorSecondary);
+  margin-bottom: 1rem;
+}
+.card-container > article:last-of-type {
+  border: none;
+}
+@media (min-width: 1024px) {
+  .card-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    column-gap: 0.5rem;
+  }
+  .card-container > article,
+  .card-container > article:last-of-type {
+    flex: 0 0 calc(50% - 0.5rem);
+    border: solid thin var(--colorSecondary);
+    border-radius: 0.5rem;
+  }
+}
